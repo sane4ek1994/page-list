@@ -2,26 +2,16 @@ import { Tabs, TabsHeader, TabsBody, Tab, TabPanel } from '@material-tailwind/re
 import { NavLink } from 'react-router-dom'
 import { Table } from '../Table/index'
 
-export const TabComponent = () => {
-  const data = [
-    {
-      label: 'Income',
-      value: 'Income'
-    },
-    {
-      label: 'Outcome',
-      value: 'Outcome'
-    },
-    {
-      label: 'Loans',
-      value: 'Loans'
-    },
-    {
-      label: 'Investments',
-      value: 'Investments'
-    }
-  ]
+type TTab = {
+  label: string
+  value: string
+}
 
+type TTabsProps = {
+  data: TTab[]
+}
+
+export const TabComponent = ({ data }: TTabsProps) => {
   return (
     <Tabs className='py-20' value='html'>
       <TabsHeader>

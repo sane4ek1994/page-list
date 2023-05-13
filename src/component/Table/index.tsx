@@ -4,6 +4,7 @@ import { getResourse } from '../../services/getResourse'
 type TData = {
   Name: string
   'Market Capitalization': string
+  No: number
 }
 
 export const Table = () => {
@@ -28,7 +29,7 @@ export const Table = () => {
       <tbody>
         {data.map((item: TData) => {
           return (
-            <tr>
+            <tr key={item.No}>
               <td className='px-5'>{item.Name} </td>
               <td className='px-5'>{item['Market Capitalization']}</td>
             </tr>
